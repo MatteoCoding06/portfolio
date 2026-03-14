@@ -1,26 +1,42 @@
+/* app/globals.css */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Qui definiamo i tuoi colori e font custom al posto del vecchio tailwind.config.js */
+@theme {
+  --color-primary: #a531dc;
+  --color-accent-purple: #be5fed;
+  --color-background-light: #fbf6fe;
+  --color-background-dark: #060918;
+  --color-surface-dark: #1e1e1e;
+  --color-surface-blue: #323e74;
+  --color-hover-orange: #ff9d60;
+
+  /* Colleghiamo il font impostato nel file layout.tsx */
+  --font-display: var(--font-public-sans), sans-serif;
+
+  /* Impostazioni opzionali per i bordi arrotondati (Tailwind di base li copre già quasi tutti) */
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Le tue classi personalizzate originali */
+@layer utilities {
+  .purple-gradient-text {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #e2b9f9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .purple-gradient-bg {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #e2b9f9 100%);
+  }
+
+  .glass-card {
+    /* Mettiamo qui solo le classi estetiche e di transizione */
+    @apply bg-white rounded-2xl border border-slate-200 transition-all duration-300 
+           dark:bg-surface-blue/10 dark:border-slate-800 
+           hover:border-primary/50;
+  }
 }
