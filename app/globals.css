@@ -1,7 +1,6 @@
 /* app/globals.css */
 @import "tailwindcss";
 
-/* Qui definiamo i tuoi colori e font custom al posto del vecchio tailwind.config.js */
 @theme {
   --color-primary: #a531dc;
   --color-accent-purple: #be5fed;
@@ -9,32 +8,44 @@
   --color-background-dark: #060918;
   --color-surface-dark: #1e1e1e;
   --color-surface-blue: #323e74;
-  --color-hover-orange: #ff9d60;
 
-  /* Colleghiamo il font impostato nel file layout.tsx */
   --font-display: var(--font-public-sans), sans-serif;
 
-  /* Impostazioni opzionali per i bordi arrotondati (Tailwind di base li copre già quasi tutti) */
   --radius: 0.25rem;
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
   --radius-full: 9999px;
 }
 
-/* Le tue classi personalizzate originali */
 @layer utilities {
   .purple-gradient-text {
     background: linear-gradient(135deg, var(--color-primary) 0%, #e2b9f9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-
+  /* === Sfondo statico (per icone e logo) === */
   .purple-gradient-bg {
     background: linear-gradient(135deg, var(--color-primary) 0%, #e2b9f9 100%);
   }
 
+  /* === Sfondo animato (solo per i bottoni interattivi) === */
+  .btn-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary) 0%,
+      #e2b9f9 50%,
+      var(--color-primary) 100%
+    );
+    background-size: 200% auto;
+    background-position: 0% 50%;
+    transition: background-position 0.5s ease-in-out;
+  }
+
+  .btn-gradient:hover {
+    background-position: 100% 50%;
+  }
+
   .glass-card {
-    /* Mettiamo qui solo le classi estetiche e di transizione */
     @apply bg-white rounded-2xl border border-slate-200 transition-all duration-300 
            dark:bg-surface-blue/10 dark:border-slate-800 
            hover:border-primary/50;

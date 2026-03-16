@@ -1,4 +1,5 @@
 // app/about/page.tsx
+import Button from "@/app/components/button";
 import GetInTouch from "@/app/components/getintouch";
 import Image from "next/image";
 import Link from "next/link";
@@ -67,18 +68,18 @@ export default function AboutPage() {
 
   return (
     // Usa lo stesso max-w della Hero e Navbar per coerenza visiva
-    <main className="max-w-[1600px] mx-auto w-full px-6 md:px-12 lg:px-24 py-12">
+    <main className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-24 py-12">
       {/* Hero Bio Section */}
       <section className="flex flex-col md:flex-row items-center gap-10 mb-20">
         <div className="shrink-0 relative">
           <div className="relative aspect-square w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-accent-purple/30 shadow-2xl shadow-accent-purple/10">
-            {/* <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP8RLqvhWmdCpp-q7GQye59EtjFz3ehaTnJu21puS4jbi7ZG8Is_XXlQzxuswdx_oYcXSJ94bgtbEnhjDa8f7gMtddb2e2AbE0YdeFKLzC8MkSjAaFk083ucvzn1_m8sEnwrLiC-ES7flxneSP2i-SM8nAFYS6l194pmNjqe5QonR-gwprLV7SkDkm5h4YXMo89UoyyP3pR0ZO39SNUH4ySRZ9luAGBNGpdf2rBxr0RjeXBzusHiWnNy4mAPnMTF6G4SW7ute_3I3Y"
+            <Image
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUe6vtSVx2ZyxQW8N12STxkGm42g8oEsY6p6Q2yFwTh26Zw-uRkuTwtDAvvhKVsL4hzIV40SJkKxRABSw258y_hv0d_vzEjv1M3zRKRKg4tL2V9JrFkCpYrFEtmcX59b62z9CITSM85YVao-mka3ZgrnFd3DkR1Vm-zhf6Ws1kkG_u-ONGlLHFVTjjno7F1NmJbW3gIXGs-ocYxZ-HBCtyPkDT37W32ozg40DAmvInCjj2Ic3PjxUE3oe7uAHGHtpuLNwOjaXKA6b6"
               alt="Close up portrait of a smiling professional designer"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 192px, 256px"
-            /> */}
+            />
           </div>
         </div>
 
@@ -96,12 +97,13 @@ export default function AboutPage() {
             ensuring every pixel serves a purpose.
           </p>
           <div className="flex gap-4 mt-8 justify-center md:justify-start">
-            <button className="bg-accent-purple text-white px-6 py-3 rounded-lg font-bold hover:scale-[1.02] transition-transform">
-              Download CV
-            </button>
-            <button className="border border-accent-purple text-accent-purple px-6 py-3 rounded-lg font-bold hover:scale-[1.02] transition-transform">
-              Lets Talk
-            </button>
+            <Button href="/projects" variant="primary" icon="arrow_forward">
+              View Work
+            </Button>
+
+            <Button href="/contact" variant="secondary">
+              Get in Touch
+            </Button>
           </div>
         </div>
       </section>
