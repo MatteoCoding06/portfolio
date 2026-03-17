@@ -7,10 +7,10 @@ export default function Home() {
   const toolkit = [
     { name: "JavaScript", icon: "javascript" },
     { name: "React", icon: "data_object" },
-    { name: "PostgreSQL", icon: "storage" },
-    { name: "AWS", icon: "cloud" },
+    { name: "NextJs", icon: "storage" },
     { name: "Tailwind CSS", icon: "palette" },
     { name: "TypeScript", icon: "terminal" },
+    { name: "MySql", icon: "storage" },
   ];
   const stats = [
     { number: "5+", label: "Years Experience" },
