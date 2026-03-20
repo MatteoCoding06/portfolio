@@ -19,7 +19,7 @@ export default function Navbar() {
           <div className="size-8 purple-gradient-bg rounded-lg flex items-center justify-center text-white">
             <span className="material-symbols-outlined text-xl">code</span>
           </div>
-          <h2 className="text-xl font-bold tracking-tight">Alex Rivera</h2>
+          <h2 className="text-xl font-bold tracking-tight">Matteo Lombardi</h2>
         </div>
 
         {/* PARTE DESTRA: Menu Desktop + Bottone Mobile */}
@@ -50,13 +50,13 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* MENU MOBILE: Ora è in absolute per non spingere la pagina */}
+      {/* MENU MOBILE*/}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full border-b border-primary/10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-xl px-6 py-6 shadow-2xl transition-all">
           <nav className="flex flex-col space-y-6">
             {navLinks.map((link) => (
               <Link
-                key={link.name} // React richiede sempre una key univoca nei map
+                key={link.name}
                 href={link.href}
                 className="text-sm font-medium hover:text-primary transition-colors"
               >

@@ -2,26 +2,10 @@
 import Button from "@/app/components/button";
 import Image from "next/image";
 import Link from "next/link";
+import { contactInfo } from "@/data/contactInfo"; // Assicurati di avere questo file con le info di contatto
 
 export default function ContactPage() {
   // Array per le card delle info di contatto
-  const contactInfo = [
-    {
-      icon: "mail",
-      title: "Email Us",
-      details: ["hello@example.com", "support@example.com"],
-    },
-    // {
-    //   icon: "location_on",
-    //   title: "Visit Headquarters",
-    //   details: ["88 Innovation Way", "Tech District, SF 94105"],
-    // },
-    {
-      icon: "call",
-      title: "Call Anytime",
-      details: ["+1 (555) 012-3456", "Mon-Fri, 9am - 6pm PST"],
-    },
-  ];
 
   // Array per i link social
   const socialLinks = [
@@ -181,17 +165,15 @@ export default function ContactPage() {
               ))}
             </div>
 
-            {/* ... Resto della sidebar (Mappa, Social) ... */}
-
             {/* Map Placeholder */}
-            <div className="rounded-2xl overflow-hidden glass-card h-48 relative group cursor-pointer border-primary/20 p-0">
-              {/* <Image
+            {/* <div className="rounded-2xl overflow-hidden glass-card h-48 relative group cursor-pointer border-primary/20 p-0">
+              <Image
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYvfRaAnvWGMS4qRsIW6DTc1RtyZdEIHnbVuW-EsSiB6P-mmRD2lnR8pSLRvnxqSnpTiCbAJp2y8eB8cQ0jIKW2h3RO1htWQtZYQm28jA9ea4D0dVw2Ijl_JCZXF4mU-GG7wTuFSxHPC_kwNzd8O9qQY1Q3yYNaB6vsSb-PcJiMJ5Cn84eQEVeWdXlu-7543ganNRhcP2305f2gw2MeoO0ePJoLaTxCLqnugXm73iZ-YR-kganaFmJFrAOoWIewcQ4rQ2pqqXGmSHw"
                 alt="Map of San Francisco technology district"
                 fill
                 className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                 sizes="(max-width: 1024px) 100vw, 33vw"
-              /> */}
+              />
               <div className="absolute inset-0 bg-primary/10 flex items-center justify-center group-hover:bg-transparent transition-colors duration-500">
                 <div className="bg-white dark:bg-slate-900 p-3 rounded-full shadow-xl transform group-hover:-translate-y-2 transition-transform duration-300">
                   <span className="material-symbols-outlined text-accent-purple">
@@ -199,7 +181,7 @@ export default function ContactPage() {
                   </span>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Social Links */}
             <div className="glass-card p-6 text-center md:text-left">

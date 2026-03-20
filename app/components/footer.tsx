@@ -9,10 +9,10 @@ export default function Footer() {
             <div className="size-6 purple-gradient-bg rounded flex items-center justify-center text-white">
               <span className="material-symbols-outlined !text-sm">code</span>
             </div>
-            <span className="font-bold">Alex Rivera</span>
+            <span className="font-bold">Matteo Lombardi</span>
           </div>
           <p className="text-slate-500 text-sm" style={{ color: "#666666" }}>
-            © 2024 Alex Rivera. All rights reserved.
+            © 2026 Matteo Lombardi. All rights reserved.
           </p>
         </div>
         <div className="flex gap-6">

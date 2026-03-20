@@ -1,71 +1,12 @@
 // app/about/page.tsx
 import Button from "@/app/components/button";
 import GetInTouch from "@/app/components/getintouch";
+import { journey } from "@/data/journey";
+import { expertise } from "@/data/expertise";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutPage() {
-  // --- DATI ---
-  const expertise = [
-    {
-      title: "Design",
-      icon: "palette",
-      skills: [
-        "UI/UX Design",
-        "Prototyping",
-        "Design Systems",
-        "Brand Identity",
-      ],
-    },
-    {
-      title: "Frontend",
-      icon: "code",
-      skills: [
-        "React / Next.js",
-        "Tailwind CSS",
-        "TypeScript",
-        "Performance Opt.",
-      ],
-    },
-    {
-      title: "Backend",
-      icon: "database",
-      skills: [
-        "Node.js / Express",
-        "PostgreSQL",
-        "REST & GraphQL",
-        "AWS / Cloud Ops",
-      ],
-    },
-  ];
-
-  const journey = [
-    {
-      role: "Senior Product Designer",
-      period: "2021 — Present",
-      company: "Innovate Labs, San Francisco",
-      description:
-        "Leading the design and frontend implementation of enterprise-level dashboard tools. Mentoring junior designers and establishing a unified company design system used across 4 separate product lines.",
-      isActive: true,
-    },
-    {
-      role: "Full Stack Developer",
-      period: "2018 — 2021",
-      company: "Creative Pulse Agency",
-      description:
-        "Developed over 20 custom web applications for high-profile clients in the tech and finance sectors. Specialized in creating fast, SEO-optimized React applications integrated with Headless CMS platforms.",
-      isActive: false,
-    },
-    {
-      role: "Junior UI Designer",
-      period: "2016 — 2018",
-      company: "Studio Pixel",
-      description:
-        "Started my journey focused on pixel-perfect UI execution and visual storytelling. Assisted in rebranding initiatives and high-fidelity prototyping for mobile applications.",
-      isActive: false,
-    },
-  ];
-
   return (
     // Usa lo stesso max-w della Hero e Navbar per coerenza visiva
     <main className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-24 py-12">
@@ -85,16 +26,18 @@ export default function AboutPage() {
 
         <div className="flex flex-col text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Hi, Im <span className="text-accent-purple">Alex Rivera</span>
+            Hi, Im <span className="text-accent-purple">Matteo Lombardi</span>
           </h1>
           <p className="text-xl text-slate-600 dark:text-slate-400 mb-6 font-medium">
-            Full-Stack Designer & Developer based in San Francisco
+            Developer & Designer from Italy
           </p>
           <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300">
-            I am a multidisciplinary creator focused on building harmonious
-            digital experiences. With over 8 years of experience, I bridge the
-            gap between complex backend logic and intuitive frontend design,
-            ensuring every pixel serves a purpose.
+            I am a Fullstack Developer and multidisciplinary creator fueled by a
+            lifelong passion for technology and hardware. I love diving into the
+            mechanics of how things work under the hood, but my true focus lies
+            in crafting intuitive frontend experiences. By bridging the gap
+            between complex backend logic and thoughtful design, I ensure that
+            every pixel serves a clear purpose.
           </p>
           <div className="flex gap-4 mt-8 justify-center md:justify-start">
             <Button href="/projects" variant="primary" icon="arrow_forward">
@@ -117,7 +60,6 @@ export default function AboutPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {expertise.map((item) => (
-            // Applichiamo la tua amata glass-card qui!
             <div key={item.title} className="glass-card group p-8">
               <div className="w-12 h-12 bg-accent-purple/10 text-accent-purple rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-all">
                 <span className="material-symbols-outlined">{item.icon}</span>
@@ -146,11 +88,9 @@ export default function AboutPage() {
         <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-3 space-y-12">
           {journey.map((job, index) => (
             <div key={index} className="relative pl-8">
-              {/* Pallino della timeline (viola se attivo, grigio se passato) */}
               <div
                 className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full border-4 border-background-light dark:border-background-dark ${job.isActive ? "bg-accent-purple" : "bg-slate-300 dark:bg-slate-700"}`}
               ></div>
-
               <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
                   {job.role}

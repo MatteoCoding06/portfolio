@@ -3,14 +3,11 @@ import Button from "./button";
 export default function GetInTouch() {
   return (
     <section className="py-24">
-      {/* 1. Usiamo glass-card al posto del purple-gradient-bg */}
       <div className="glass-card p-12 md:p-20 text-center relative overflow-hidden">
-        {/* 2. Aggiungiamo due luci soffuse decorative agli angoli per dare profondità */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-accent-purple/10 blur-[80px] rounded-full pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 blur-[80px] rounded-full pointer-events-none"></div>
 
         <div className="relative z-10 space-y-6 max-w-3xl mx-auto">
-          {/* 3. Colori del testo aggiornati per supportare Light/Dark mode */}
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white">
             Lets work together
           </h2>
@@ -19,7 +16,6 @@ export default function GetInTouch() {
             open. Lets build something extraordinary.
           </p>
 
-          {/* 4. I nostri bellissimi bottoni riutilizzabili! */}
           <div className="flex flex-wrap justify-center gap-4 pt-6">
             <Button
               href="mailto:hello@example.com"
